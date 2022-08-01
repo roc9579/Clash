@@ -112,7 +112,7 @@ rule-providers:
 
 
 rules:
-#  - RULE-SET,DIY
+  - RULE-SET,DIY,MATCH
   - RULE-SET,Notion,代理
   - RULE-SET,SteamCN,代理
   - RULE-SET,Steam,代理
