@@ -1,5 +1,5 @@
 payload:
-  - DOMAIN-SUFFIX,loggly.com,DIRECT
+  - DOMAIN-SUFFIX,baidu.com,DIRECT
   
 # 目前 Clash 支持的规则类型如下：
 # DOMAIN-SUFFIX：域名后缀匹配
