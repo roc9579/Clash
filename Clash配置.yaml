@@ -21,6 +21,23 @@ proxies: null
 
 
 ###---------------------------------
+# name: # Provider 名称
+  #   type: http # http 或 file
+  #   path: # 文件路径
+  #   url: # 只有当类型为 HTTP 时才可用，您不需要在本地空间中创建新文件。
+  #   interval: # 自动更新间隔，仅在类型为 HTTP 时可用
+  #   health-check: # 健康检查选项从此处开始
+  #     enable:
+  #     url: 
+  #     interval: 
+ 
+  #
+  # 「url」参数填写订阅链接
+  #
+  # 订阅链接可以使用 API 进行转换，如：https://sub.dler.io/
+  #
+  # 1.模式选择「进阶模式」 2.填写订阅链接 3.勾选「输出为 Node List」 4.「生成订阅链接」
+  
 proxy-providers:
   yy:
     type: http
