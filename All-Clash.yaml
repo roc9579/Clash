@@ -1,0 +1,258 @@
+dns:
+  enable: false
+  listen: 0.0.0.0:53
+  default-nameserver:
+    - 119.29.29.29
+  enhanced-mode: redir-host
+  fake-ip-range: 198.18.0.1/16 
+  fake-ip-filter:
+    - '*.lan'
+    - localhost.ptlogin2.qq.com
+    - '+.srv.nintendo.net'
+    - '+.stun.playstation.net'
+    - '+.msftconnecttest.com'
+    - '+.msftncsi.com'
+    - '+.xboxlive.com'
+    - 'msftconnecttest.com'
+    - 'xbox.*.microsoft.com'
+    - '*.battlenet.com.cn'
+    - '*.battlenet.com'
+    - '*.blzstatic.cn'
+    - '*.battle.net'
+  nameserver:
+    - 119.29.29.29
+  fallback-filter:
+    geoip: true
+    ipcidr:
+
+
+hosts:
+  'mtalk.google.com': 108.177.125.188
+  'dl.google.com': 180.163.151.161
+  'dl.l.google.com': 180.163.151.161
+
+
+http:
+  url-rewrite:
+  - ^https?:\/\/(www.)?(g|google)\.cn https://www.google.com 302
+
+
+port: 7890
+
+
+socks-port: 7891
+
+
+allow-lan: true
+
+
+bind-address: '*'
+
+
+external-controller: :9090
+
+
+log-level: info
+
+
+mode: rule
+
+
+
+
+
+
+
+
+
+
+###---------------------------------
+# 支持的协议及加密算法示例请查阅 Clash 项目 README 以使用最新格式：https://github.com/Dreamacro/clash/blob/master/README.md
+
+proxies: null
+
+
+
+
+
+
+
+
+
+
+
+
+###---------------------------------
+# name: # Provider 名称
+  #   type: http # http 或 file
+  #   path: # 文件路径
+  #   url: # 只有当类型为 HTTP 时才可用，您不需要在本地空间中创建新文件。
+  #   interval: # 自动更新间隔，仅在类型为 HTTP 时可用
+  #   health-check: # 健康检查选项从此处开始
+  #     enable:
+  #     url: 
+  #     interval: 
+  #
+  # 「url」参数填写订阅链接
+  #
+  # 订阅链接可以使用 API 进行转换，如：https://sub.dler.io/
+  #
+  # 1.模式选择「进阶模式」 2.填写订阅链接 3.勾选「输出为 Node List」 4.「生成订阅链接」
+  
+proxy-providers:
+  yy:
+    type: http
+    url: https://proxy-provider-converter.vercel.app/api/convert?url=https%3A%2F%2Fxn--4gq62f52gdss.com%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3Dlfkca3p0z8ybranpxllim4kg6b1rgjgj&target=clash
+    path: proxy/yy.yaml
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
+
+
+
+
+
+
+
+
+###---------------------------------
+# 策略组示例请查阅 Clash 项目 README 以使用最新格式：https://github.com/Dreamacro/clash/blob/master/README.md
+
+proxy-groups:
+- name: 代理
+  proxies:
+  - DIRECT
+  - 手动选择
+  - 自动选择
+  type: select
+- name: 手动选择
+  type: select
+  use:
+  - yy
+- interval: 300
+  name: 自动选择
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  use:
+  - yy
+- name: 兜底策略
+  proxies:
+  - 代理
+  - DIRECT
+  type: select
+
+
+
+
+
+
+
+
+
+
+
+###---------------------------------
+# 关于 Rule Provider 请查阅：https://lancellc.gitbook.io/clash/clash-config-file/rule-provider
+#rule-providers:
+# name: # Provider 名称
+#   type: http # http 或 file
+#   behavior: classical # 或 ipcidr、domain
+#   path: # 文件路径
+#   url: # 只有当类型为 HTTP 时才可用，您不需要在本地空间中创建新文件。
+#   interval: # 自动更新间隔，仅在类型为 HTTP 时可用
+
+rule-providers:
+  Notion:
+    type: http
+    behavior: classical
+    url: https://gitlab.com/proxy8/clash/-/raw/main/rules/Notion.yaml
+    path: ./Rules/Notion
+    interval: 86400
+  proxy:
+    type: http
+    behavior: domain
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt"
+    path: ./ruleset/proxy.yaml
+    interval: 86400
+  Direct:
+    type: http
+    behavior: classical
+    interval: 86400
+    path: ./Rules/Direct
+    url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Direct/Direct.yaml
+  GitHub:
+    type: http
+    behavior: classical
+    interval: 86400
+    path: ./Rules/GitHub
+    url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GitHub/GitHub.yaml
+  Telegram:
+    type: http
+    behavior: classical
+    interval: 86400
+    path: ./Rules/Telegram
+    url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.yaml
+  YouTube:
+    type: http
+    behavior: classical
+    interval: 86400
+    path: ./Rules/YouTube
+    url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.yaml
+
+
+
+
+
+
+
+
+
+
+
+
+###---------------------------------
+
+rules:
+  - RULE-SET,Notion,代理
+  - RULE-SET,YouTube,代理
+  - RULE-SET,Telegram,代理
+  - RULE-SET,GitHub,代理
+  - RULE-SET,Direct,DIRECT
+  - RULE-SET,proxy,代理
+  - SCRIPT,quic,REJECT
+  - GEOIP,CN,DIRECT
+  - MATCH,兜底策略
+
+
+
+
+
+# 目前 Clash 支持的规则类型如下：
+# DOMAIN-SUFFIX：域名后缀匹配
+# DOMAIN：域名匹配
+# DOMAIN-KEYWORD：域名关键字匹配
+# IP-CIDR：IP 段匹配
+# SRC-IP-CIDR：源 IP 段匹配
+# GEOIP：GEOIP 数据库（国家代码）匹配
+# DST-PORT：目标端口匹配
+# SRC-PORT：源端口匹配
+# PROCESS-NAME：源进程名匹配
+# RULE-SET：Rule Provider 规则匹配
+# MATCH：全匹配
+
+
+
+
+
+
+
+
+
+
+###---------------------------------
+
+script:
+  shortcuts:
+    quic: network == 'udp' and dst_port == 443
+subscribe-url: https://xn--4gq62f52gdss.com/api/v1/client/subscribe?token=lfkca3p0z8ybranpxllim4kg6b1rgjgj
