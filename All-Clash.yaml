@@ -110,7 +110,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
   fq:
     type: http
-    url: https://proxy-provider-converter.vercel.app/api/convert?url=https%3A%2F%2Fdove.589669.xyz%2Fall2clash%3F%26sub%3Dhttps%253A%252F%252Fraw.githubusercontent.com%252Ffreefq%252Ffree%252Fmaster%252Fv2%26emoji%3D0%26sort%3D0%26aead%3D0%26inline%3D1&target=clash
+    url: https://sub.maoxiongnet.com/sub?target=clash&new_name=true&url=https%3A%2F%2Fraw.githubusercontent.com%2Ffreefq%2Ffree%2Fmaster%2Fv2&insert=false&config=config%2FACL4SSR_Mini.ini
     path: proxy/fq.yaml
     health-check:
       enable: true
