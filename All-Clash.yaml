@@ -110,7 +110,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
   fq:
     type: http
-    url: https://proxy-provider-converter.vercel.app/api/convert?url=https%3A%2F%2Fghproxy.com%2Fhttps%3A%2F%2Fraw.githubusercontent.com%2Ffreefq%2Ffree%2Fmaster%2Fv2&target=clash
+    url: https://dove.589669.xyz/all2clash?&sub=https%3A%2F%2Fraw.githubusercontent.com%2Ffreefq%2Ffree%2Fmaster%2Fv2&emoji=0&sort=0&aead=0&inline=1
     path: proxy/fq.yaml
     health-check:
       enable: true
