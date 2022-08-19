@@ -108,7 +108,14 @@ proxy-providers:
       enable: true
       interval: 600
       url: http://www.gstatic.com/generate_204
-
+  fq:
+    type: http
+    url: https://proxy-provider-converter.vercel.app/api/convert?url=https%3A%2F%2Fghproxy.com%2Fhttps%3A%2F%2Fraw.githubusercontent.com%2Ffreefq%2Ffree%2Fmaster%2Fv2&target=clash
+    path: proxy/fq.yaml
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
 
 
 
@@ -122,23 +129,28 @@ proxy-providers:
 proxy-groups:
 - name: 代理
   type: select
-  icon: https://gitlab.com/proxy8/qure/-/raw/master/IconSet/Color/AU.png
+  icon: https://ghproxy.com/https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Spark.png
   proxies:
   - DIRECT
   - 手动选择
   - 自动选择
 - name: 手动选择
   type: select
+  icon: https://ghproxy.com/https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Static_1.png
   use:
   - yy
+  - fq
 - name: 自动选择
   type: url-test
+  icon: https://ghproxy.com/https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Speedtest.png
   url: http://www.gstatic.com/generate_204
   interval: 300
   use:
   - yy
+  - fq
 - name: 兜底策略
   type: select
+  icon: https://ghproxy.com/https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple_Update.png
   proxies:
   - 代理
   - DIRECT
