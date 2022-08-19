@@ -121,7 +121,7 @@ proxy-providers:
 
 proxy-groups:
 - icon: https://gitlab.com/proxy8/qure/-/raw/master/IconSet/Color/AU.png
-- name: 代理
+  name: 代理
   proxies:
   - DIRECT
   - 手动选择
