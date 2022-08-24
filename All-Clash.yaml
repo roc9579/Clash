@@ -179,13 +179,13 @@ rule-providers:
   DIY-Direct:
     type: http
     behavior: classical
-    url: https://gitlab.com/proxy8/clash/-/raw/main/rules/DIY-Direct.txt
+    url: https://ghproxy.com/https://raw.githubusercontent.com/roc9579/Clash/main/rules/DIY-Direct.txt
     path: ./ruleset/DIY-Direct.txt
     interval: 86400
   DIY-Proxy:
     type: http
     behavior: classical
-    url: https://gitlab.com/proxy8/clash/-/raw/main/rules/DIY-Proxy.txt
+    url: https://ghproxy.com/https://raw.githubusercontent.com/roc9579/Clash/main/rules/DIY-Proxy.txt
     path: ./ruleset/DIY-Proxy.txt
     interval: 86400
   reject:
@@ -221,7 +221,7 @@ rule-providers:
   Notion:
     type: http
     behavior: classical
-    url: https://gitlab.com/proxy8/clash/-/raw/main/rules/Notion.yaml
+    url: https://ghproxy.com/https://raw.githubusercontent.com/roc9579/Clash/main/rules/Notion.yaml
     path: ./ruleset/Notion.yaml
     interval: 86400
   proxy:
