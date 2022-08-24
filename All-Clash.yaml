@@ -188,6 +188,12 @@ rule-providers:
     url: https://gitlab.com/proxy8/clash/-/raw/main/rules/DIY-Proxy.txt
     path: ./ruleset/DIY-Proxy.txt
     interval: 86400
+  reject:
+    type: http
+    behavior: domain
+    url: https://ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/reject.txt
+    path: ./ruleset/reject.txt
+    interval: 86400
   Microsoft:
     type: http
     behavior: classical
@@ -274,6 +280,7 @@ rules:
   - RULE-SET,Telegram,代理
   - RULE-SET,GitHub,代理
   - RULE-SET,Direct,DIRECT
+  - RULE-SET,reject,REJECT
   - RULE-SET,proxy,代理
   - SCRIPT,quic,REJECT
   - GEOIP,CN,DIRECT
