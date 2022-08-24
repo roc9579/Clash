@@ -176,11 +176,23 @@ proxy-groups:
 #   interval: # 自动更新间隔，仅在类型为 HTTP 时可用
 
 rule-providers:
+  DIY-Direct:
+    type: http
+    behavior: classical
+    url: https://gitlab.com/proxy8/clash/-/raw/main/rules/DIY-Direct.txt
+    path: ./ruleset/DIY-Direct.txt
+    interval: 86400
+  DIY-Proxy:
+    type: http
+    behavior: classical
+    url: https://gitlab.com/proxy8/clash/-/raw/main/rules/DIY-Proxy.txt
+    path: ./ruleset/DIY-Proxy.txt
+    interval: 86400
   Notion:
     type: http
     behavior: classical
     url: https://gitlab.com/proxy8/clash/-/raw/main/rules/Notion.yaml
-    path: ./Rules/Notion
+    path: ./ruleset/Notion.yaml
     interval: 86400
   proxy:
     type: http
@@ -191,27 +203,27 @@ rule-providers:
   Direct:
     type: http
     behavior: classical
-    interval: 86400
-    path: ./Rules/Direct
     url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Direct/Direct.yaml
+    path: ./ruleset/Direct.yaml
+    interval: 86400
   GitHub:
     type: http
     behavior: classical
-    interval: 86400
-    path: ./Rules/GitHub
     url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GitHub/GitHub.yaml
+    path: ./ruleset/GitHub.yaml
+    interval: 86400
   Telegram:
     type: http
     behavior: classical
-    interval: 86400
-    path: ./Rules/Telegram
     url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.yaml
+    path: ./ruleset/Telegram.yaml
+    interval: 86400
   YouTube:
     type: http
     behavior: classical
-    interval: 86400
-    path: ./Rules/YouTube
     url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.yaml
+    path: ./ruleset/YouTube.yaml
+    interval: 86400
 
 
 
@@ -227,6 +239,8 @@ rule-providers:
 ###---------------------------------
 
 rules:
+  - RULE-SET,DIY-Proxy,代理
+  - RULE-SET,DIY-Direct,DIRECT
   - RULE-SET,Notion,代理
   - RULE-SET,YouTube,代理
   - RULE-SET,Telegram,代理
