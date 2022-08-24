@@ -194,6 +194,18 @@ rule-providers:
     url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml
     path: ./ruleset/Microsoft.yaml
     interval: 86400
+  Steam:
+    type: http
+    behavior: classical
+    url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Steam/Steam.yaml
+    path: ./ruleset/Steam.yaml
+    interval: 86400
+  SteamCN:
+    type: http
+    behavior: classical
+    url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/SteamCN/SteamCN.yaml
+    path: ./ruleset/SteamCN.yaml
+    interval: 86400
   Notion:
     type: http
     behavior: classical
@@ -248,6 +260,8 @@ rules:
   - RULE-SET,DIY-Proxy,代理
   - RULE-SET,DIY-Direct,DIRECT
   - RULE-SET,Microsoft,代理
+  - RULE-SET,Steam,代理
+  - RULE-SET,SteamCN,代理
   - RULE-SET,Notion,代理
   - RULE-SET,YouTube,代理
   - RULE-SET,Telegram,代理
