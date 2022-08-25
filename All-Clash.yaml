@@ -102,7 +102,7 @@ proxies: null
 proxy-providers:
   yy:
     type: http
-    url: https://proxy-provider-converter.vercel.app/api/convert?url=https%3A%2F%2Fxn--4gq62f52gdss.com%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3Dlfkca3p0z8ybranpxllim4kg6b1rgjgj&target=clash
+    url: https://xn--4gq62f52gdss.com/api/v1/client/subscribe?token=g1dfrmq6y2lb2iv42dj2k0i2lgvaoddo
     path: proxy/yy.yaml
     health-check:
       enable: true
@@ -317,4 +317,4 @@ rules:
 script:
   shortcuts:
     quic: network == 'udp' and dst_port == 443
-subscribe-url: https://xn--4gq62f52gdss.com/api/v1/client/subscribe?token=lfkca3p0z8ybranpxllim4kg6b1rgjgj
+subscribe-url: https://xn--4gq62f52gdss.com/api/v1/client/subscribe?token=g1dfrmq6y2lb2iv42dj2k0i2lgvaoddo
