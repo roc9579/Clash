@@ -1,6 +1,7 @@
 # 直连
 payload:
   - DOMAIN-SUFFIX,baidu.com
+  - DOMAIN-SUFFIX,apple.com
   
 # 目前 Clash 支持的规则类型如下：
 # DOMAIN-SUFFIX：域名后缀匹配
